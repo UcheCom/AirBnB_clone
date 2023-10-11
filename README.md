@@ -1,14 +1,14 @@
-0x00. AirBnB clone
-- The console
+**0x00. AirBnB clone**
+**- The console**
 
 Creation of a command interpreter to manage the hbnb projects
 
-AirBnB clone Project done by
+**AirBnB clone Project done by**
 Elijah Omeruah &
 Uchenna Oko
 
 
-Description of the project
+**Description of the project**
 This is the first step towards building our first full web application: the AirBnB clone.The goal of the project is to deploy on our server a simple copy of the AirBnB website.The final version of this project will have:
 
 - A command interpreter to manipulate data without a visual interface, like in a Shell (perfect for development and debugging)
@@ -17,7 +17,7 @@ This is the first step towards building our first full web application: the AirB
 - An API that provides a communication interface between the front-end and your data (retrieve, create, delete, update them)
 
 
-Aims & Objectives of this project
+**Aims & Objectives of this project**
 This will help to be able to manage the objects of our project:
 
 - Creation of a new object (ex: a new "User" or a new "Place")
@@ -27,7 +27,7 @@ This will help to be able to manage the objects of our project:
 - Destroy an object
 
 
-The created objects
+**The created objects**
 The list of the objects (instances) that can be created are as follows:
 
 - BaseModel
@@ -38,7 +38,7 @@ The list of the objects (instances) that can be created are as follows:
 - Review
 - Place
 
-Files and Directories
+**Files and Directories**
 - models directory contains all classes used for the entire project. A class, called “model” in a OOP project is the representation of an object/instance.
 - tests directory contains all unit tests.
 console.py file is the entry point of our command interpreter.
@@ -49,7 +49,7 @@ console.py file is the entry point of our command interpreter.
 
 The project's implementation will happen in the following phases:
 
-Phase One
+**Phase One**
 The first phase is to manipulate a powerful storage system to give an abstraction between objects and how they are stored and persisted. To achieve this, I will:
 
 - put in place a parent class (called BaseModel) to take care of the initialization, serialization and deserialization of my future instances
@@ -61,7 +61,7 @@ The first phase is to manipulate a powerful storage system to give an abstractio
 - Manage (create, update, destroy, etc) objects via a console/command interpreter
 - Store and persist objects to files (JSON files)
 
-Compilation
+**Compilation**
 To start up the interpreter, clone this repository, and run the console file on linux as follows:
 
 - Clone this repository: git clone "https://github.com/UcheCom/AirBnB_clone.git"
@@ -100,6 +100,9 @@ EOF  help  quit
 (hbnb)
 $
 
-Authors
+
+**Authors**
+
 Elijah Omeruah
+
 Uchenna Oko
