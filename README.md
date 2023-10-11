@@ -30,6 +30,7 @@ This will help to be able to manage the objects of our project:
 
 
 **The created objects**
+
 The list of the objects (instances) that can be created are as follows:
 
 - BaseModel
@@ -52,6 +53,7 @@ console.py file is the entry point of our command interpreter.
 The project's implementation will happen in the following phases:
 
 **Phase One**
+
 The first phase is to manipulate a powerful storage system to give an abstraction between objects and how they are stored and persisted. To achieve this, I will:
 
 - put in place a parent class (called BaseModel) to take care of the initialization, serialization and deserialization of my future instances
@@ -64,6 +66,7 @@ The first phase is to manipulate a powerful storage system to give an abstractio
 - Store and persist objects to files (JSON files)
 
 **Compilation**
+
 To start up the interpreter, clone this repository, and run the console file on linux as follows:
 
 - Clone this repository: git clone "https://github.com/UcheCom/AirBnB_clone.git"
