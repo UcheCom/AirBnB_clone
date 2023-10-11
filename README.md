@@ -6,7 +6,6 @@ Creation of a command interpreter to manage the hbnb projects
 **AirBnB clone Project done by**
 
 Elijah Omeruah &
-
 Uchenna Oko
 
 
