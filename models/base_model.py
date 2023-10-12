@@ -10,11 +10,26 @@ class BaseModel():
     console project.
     """
 
-    def __init__(self):
-        """ Initializes the BaseModel class."""
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+    def __init__(self, *args, **kwargs):
+        """ Initializes the BaseModel class.
+        Args:
+            *args(any): ordered
+            **kwargs(dict): key/value pairs of the args.
+        """
+
+        f_mat = "%Y-%m-%dT%H:%M:%S.%f"
+
+        if not kwargs:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
+
+        else:
+            for (k, v) in kwargs.items():
+                if k == 'created_at' or k == 'updated_at':
+                    v = datetime.strptime(kwargs[k], f_mat)
+                if k != '__class__':
+                    setattr(self, k, v)
 
     def __str__(self):
         """ Prints the string representation of the
