@@ -8,6 +8,8 @@ Creation of a command interpreter to manage the hbnb projects
 Elijah Omeruah &
 Uchenna Oko
 
+![249cbf8d94a64af52e78c8fceae6b88e](https://github.com/UcheCom/AirBnB_clone/assets/111011092/1b8c39c2-0e95-4d79-b5ea-1d872ecbd5d4)
+
 
 **Description of the project**
 
