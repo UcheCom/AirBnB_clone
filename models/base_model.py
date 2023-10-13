@@ -3,7 +3,8 @@
 """
 import uuid
 from datetime import datetime
-import models
+from models import storage
+
 
 class BaseModel():
     """ This defines the base class for the HBNB
@@ -13,7 +14,7 @@ class BaseModel():
     def __init__(self, *args, **kwargs):
         """ Initializes the BaseModel class.
         Args:
-            *args(any): ordered
+            *args(any): not used
             **kwargs(dict): key/value pairs of the args.
         """
 
@@ -23,7 +24,7 @@ class BaseModel():
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
-
+            storage.new(self)
         else:
             for (k, v) in kwargs.items():
                 if k == 'created_at' or k == 'updated_at':
@@ -43,6 +44,7 @@ class BaseModel():
         current date.
         """
         self.updated_at = datetime.now()
+        storage.save()
 
     def to_dict(self):
         """ Returns a dictionary containing all
