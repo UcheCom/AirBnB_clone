@@ -41,5 +41,15 @@ class TestBaseModel(unittest.TestCase):
         my_model = BaseModel()
         self.assertTrue(dict, type(my_model.to_dict()))
 
+    def test_init_kwargs(self):
+        """ Tests the __init__ method with keyword arguments """
+        # Create a dictionary of attributes and values
+        kwargs = {"id": "5678", "name": "Bob", "age": 30}
+        # Create an instance of BaseModel with kwargs
+        obj = BaseModel(**kwargs)
+        # Check if the object has the same attributes and values as kwargs
+        for key, value in kwargs.items():
+            self.assertEqual(getattr(obj, key), value)
+
     if __name__ == "__main__":
         unittest.main()
