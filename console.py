@@ -6,6 +6,7 @@ from models.base_model import BaseModel
 from models.user import User
 from models import storage
 
+
 class HBNBCommand(cmd.Cmd):
     """A class that inherits from cmd.Cmd
     Console command class.
@@ -17,7 +18,7 @@ class HBNBCommand(cmd.Cmd):
         'User': User,
     }
     cmds = ['create']
-    
+
     def do_create(self, arg):
         """Create command creates new instance,
         saves it to JSON file & prints the id.
@@ -43,6 +44,7 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         """An empty line + ENTER shouldn’t execute anything"""
         pass
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
