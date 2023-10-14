@@ -27,7 +27,8 @@ class FileStorage():
         FileStorage.__objects["{}.{}".format(nw_obj, obj.id)] = obj
 
     def save(self):
-        """ Serializes __object to JSON file"""
+        """ Serializes __object to JSON file in a file path
+        """
         nw_dic = {}
         for key in FileStorage.__objects.keys():
             nw_dic[key] = FileStorage.__objects[key].to_dict()
@@ -35,12 +36,17 @@ class FileStorage():
             json.dump(nw_dic, des_file)
 
     def reload(self):
-        """Deserializes the JSON file to __object if the file path exist"""
+        """Deserializes the JSON file to __object
+        if the file path exist
+        """
         from models.base_model import BaseModel
+        from models.user import User
 
         o_dic = {
-                'BaseModel': BaseModel
-                }
+                'BaseModel': BaseModel,
+                'User': User
+        }
+
         if os.path.exists(FileStorage.__file_path) is True:
             with open(FileStorage.__file_path) as des_file:
                 r_objs = json.load(des_file)
