@@ -8,6 +8,7 @@ from datetime import datetime
 import models
 from time import sleep
 
+
 class TestBaseModel(unittest.TestCase):
     """ Test case for base model"""
 
