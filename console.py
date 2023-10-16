@@ -86,7 +86,7 @@ class HBNBCommand(cmd.Cmd):
         if not args:
             print("** class name missing **")
             return
-        arg_list = args.split('')
+        arg_list = args.split(' ')
         cl_name = arg_list[0]
 
         if cl_name not in HBNBCommand.o_dic.keys():
@@ -95,10 +95,11 @@ class HBNBCommand(cmd.Cmd):
             print("** instance id missing **")
         else:
             all_objs = storage.all()
-            for (k, obj) in all_objs.items():
-                n_class = obj.__class__.__name__
+            for (k, v) in all_objs.items():
+                n_class = v.__class__.__name__
+                obj_id = v.id
                 if n_class == cl_name and obj_id == arg_list[1].strip('"'):
-                    del obj
+                    del v
                     del storage._FileStorage__objects[k]
                     storage.save()
                     return
