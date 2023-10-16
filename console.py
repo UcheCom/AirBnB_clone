@@ -30,6 +30,17 @@ class HBNBCommand(cmd.Cmd):
     }
     cmds = ['create', 'show', 'destroy', 'update', 'all,', 'count']
 
+    def precmd(self, args):
+        """ This Parses/tokenizes input and returns cmd with args"""
+        if '.' in args and '(' in args and ')' in args:
+            arg_list = args.split('.')
+            _cmd = arg_list[1].split('(')
+            _args = _cmd[1].split(')')
+            if arg_list[0] in HBNBCommand.o_dic.keys() and \
+               _cmd[0] in HBNBCommand.cmds:
+                args = _cmd[0] + ' ' + arg_list[0] + ' ' + _args[0]
+        return args
+
     def do_create(self, arg):
         """Create command creates new instance,
         saves it to JSON file & prints the id.
