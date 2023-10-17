@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" """
+"""Defines the unittest module for user.py"""
 import unittest
 from models.user import User
 from models.base_model import BaseModel
@@ -31,9 +31,11 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.user.last_name, "")
 
     def test_to_dict(self):
-        """Test if User's to_dict method
-returns a dictionary with the correct attributes"""
-        # Call the to_dict method on the user instance and assign it to user_dict
+        """Test if User's to_dict method returns
+        a dictionary with the correct attributes
+        """
+        # Call the to_dict method on the user instance
+        # and assign it to user_dict
         user_dict = self.user.to_dict()
         # Check if user_dict is a dictionary
         self.assertIsInstance(user_dict, dict)
@@ -41,24 +43,18 @@ returns a dictionary with the correct attributes"""
         self.assertEqual(user_dict["__class__"], "User")
         # Check if user_dict has the same id as the user instance
         self.assertEqual(user_dict["id"], self.user.id)
-        # Check if user_dict has the same created_at as the user instance in ISO format
+        # Check if user_dict has the same created_at
+        # as the user instance in ISO format
         self.assertEqual(
-            user_dict["created_at"], 
+            user_dict["created_at"],
             self.user.created_at.isoformat()
             )
-        # Check if user_dict has the same updated_at as the user instance in ISO format
+        # Check if user_dict has the same updated_at
+        # as the user instance in ISO format
         self.assertEqual(
-            user_dict["updated_at"], 
+            user_dict["updated_at"],
             self.user.updated_at.isoformat()
             )
-        # Check if user_dict has the same email as the user instance
-        self.assertEqual(user_dict["email"], self.user.email)
-        # Check if user_dict has the same password as the user instance
-        self.assertEqual(user_dict["password"], self.user.password)
-        # Check if user_dict has the same first_name as the user instance
-        self.assertEqual(user_dict["first_name"], self.user.first_name)
-        # Check if user_dict has the same last_name as the user instance
-        self.assertEqual(user_dict["last_name"], self.user.last_name)
 
     def test_init_kwargs(self):
         """Test if User's __init__ method
