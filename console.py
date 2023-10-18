@@ -39,6 +39,9 @@ class HBNBCommand(cmd.Cmd):
             if arg_list[0] in HBNBCommand.o_dic.keys() and \
                _cmd[0] in HBNBCommand.cmds:
                 args = _cmd[0] + ' ' + arg_list[0] + ' ' + _args[0]
+            elif arg_list[0] in HBNBCommand.o_dic.keys() and \
+                    _cmd[0] == 'counter':
+                args = 'counter' + ' ' + arg_list[0]
         return args
 
     def do_create(self, arg):
